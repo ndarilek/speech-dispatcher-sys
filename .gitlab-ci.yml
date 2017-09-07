@@ -1,0 +1,25 @@
+image: rust
+
+stages:
+  - test
+  - publish
+
+before_script:
+  - rustup toolchain add nightly
+  - - rustup default nightly
+  - apt-get update
+  - apt-get install -y libclang-dev libspeechd-dev
+
+test:
+  stage: test
+  script:
+  - cargo build
+
+publish:
+  stage: publish
+  script:
+  - cargo login $CARGO_TOKEN
+  - cargo package
+  - cargo publish
+  only:
+  - tags
