@@ -5,8 +5,6 @@ stages:
   - publish
 
 before_script:
-  - rustup toolchain add nightly
-  - - rustup default nightly
   - apt-get update
   - apt-get install -y libclang-dev libspeechd-dev
 
