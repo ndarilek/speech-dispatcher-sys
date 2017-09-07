@@ -7,7 +7,6 @@ fn main() {
     println!("cargo:rustc-link-lib=speechd");
     let out_dir = env::var("OUT_DIR").unwrap();
     let _ = bindgen::builder()
-        .no_unstable_rust()
         .header("wrapper.h")
         .constified_enum("SPDConnectionMode")
         .constified_enum("SPDPriority")
