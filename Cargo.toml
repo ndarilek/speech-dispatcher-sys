@@ -5,5 +5,5 @@ authors = ["Nolan Darilek <nolan@thewordnerd.info>"]
 repository = "https://gitlab.com/ndarilek/speech-dispatcher-sys"
 
 [build-dependencies]
-bindgen = "0.30"
+bindgen = "0.32"
 gcc = "0.3"
